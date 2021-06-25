@@ -10,7 +10,7 @@
 
     <name>Start Sonhos</name>
 
-    <description> 
+    <description>
         Aplicativo oficial da Start
     </description>
 
@@ -87,6 +87,9 @@
 
     <plugin name="de.appplant.cordova.plugin.local-notification" />
     -->
+
+    <plugin name="cordova-plugin-qrscanner" />  
+    <plugin name="cordova-plugin-camera-preview" spec="https://github.com/diogenesjup/diogenes-camera-preview.git" />
     
     <!-- Define app icon for each platform. -->
     <icon src="www/assets/images/icones/225.png" />
