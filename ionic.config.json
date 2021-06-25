@@ -1,0 +1,7 @@
+{
+  "name": "com.whatsignals.start",
+  "type": "custom",
+  "integrations": {
+    "cordova": {}
+  }
+}

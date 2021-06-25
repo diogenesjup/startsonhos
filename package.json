@@ -1,0 +1,22 @@
+{
+  "name": "com.whatsignals.start",
+  "version": "1.0.0",
+  "description": "Aplicativo oficial da Start",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ https://github.com/diogenesjup/startsonhos.git"
+  },
+  "keywords": [
+    "Start Sonhos"
+  ],
+  "author": "SIMPRESAS LIVROS DIGITAIS",
+  "license": "ISC",
+  "bugs": {
+    "url": " https://github.com/diogenesjup/startsonhos/issues"
+  },
+  "homepage": " https://github.com/diogenesjup/startsonhos#readme"
+}
