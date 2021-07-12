@@ -1,3 +1,64 @@
+// SUGESTAO DO DOMINIO DO EMAIL
+var EmailDomainSuggester = {
+  
+  domains: ["yahoo.com", "yahoo.com.br", "gmail.com", "google.com", "hotmail.com", "uol.com.br", "bol.com.br", "outlook.com", "me.com", "aol.com", "mac.com", "live.com", "comcast.com", "googlemail.com", "msn.com", "hotmail.co.uk", "yahoo.co.uk", "facebook.com", "verizon.net", "att.net", "gmz.com", "mail.com"],
+  
+  bindTo: $('#email'),
+  
+  init: function() {
+    this.addElements();
+    this.bindEvents();
+  },
+  
+  addElements: function() {
+    // Create empty datalist
+    this.datalist = $("<datalist />", {
+      id: 'email-options'
+    }).insertAfter(this.bindTo);
+    // Corelate to input
+    this.bindTo.attr("list", "email-options");
+  },
+  
+  bindEvents: function() {
+    this.bindTo.on("keyup", this.testValue);
+  },
+    
+  testValue: function(event) {
+    var el = $(this),
+        value = el.val();
+                    
+    // email has @
+    // remove != -1 to open earlier
+    if (value.indexOf("@") != -1) {
+      value = value.split("@")[0];
+      EmailDomainSuggester.addDatalist(value); 
+    } else {
+      // empty list
+      EmailDomainSuggester.datalist.empty();
+    }
+     
+  },
+  
+  addDatalist: function(value) {
+    var i, newOptionsString = "";
+    for (i = 0; i < this.domains.length; i++) {
+      newOptionsString += 
+        "<option value='" + 
+          value + 
+          "@" +
+          this.domains[i] +
+        "'>";
+    }
+    
+    // add new ones
+    this.datalist.html(newOptionsString);
+  }
+  
+}
+
+EmailDomainSuggester.init();
+
+
 // COMO FAZER A CHAMADA NO FORMULÁRIO onSubmit="return ajaxSubmit(this);"
 var ajaxSubmit = function (form) {
   // fetch where we want to submit the form to
@@ -18,6 +79,37 @@ var ajaxSubmit = function (form) {
 
   return false;
 };
+
+
+// ABRIR A URL EM UM LINK EXTERNO OU PELO MENOS EM UM NAVEGADOR INTERNO MELHOR
+function openUrl(url){
+
+  if(url!=""){
+   
+    // ABRINDO A URL
+    //cordova.InAppBrowser.open(url, '_system', 'location=yes');
+    cordova.InAppBrowser.open(url, '_blank', 'location=yes,hidden=no,hardwareback=no');
+
+    /*
+
+        CAPTURAR A URL DO NAVEGADOR IN APP
+
+        You can get the url from javascript on any of the inAppBrowser events (loadstart, loadstop, loaderror, exit)
+
+        var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+        var myCallback = function(event) { alert(event.url); }
+        ref.addEventListener('loadstart', myCallback);
+
+
+        But for the "bookmark" button, I think you will need to edit the inAppBrowser plugin to add a native button, and as you will use a native button and you will use native code, you can get the url with
+
+        webView.getOriginalUrl();
+
+    */
+
+  }
+
+}
 
 // FOR"CAR VOLTAR AO TOPO
 function voltarAoTopo() {

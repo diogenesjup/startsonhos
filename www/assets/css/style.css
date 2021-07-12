@@ -2307,5 +2307,46 @@ p.preferencias{
 }
 
 
+.titulo-interno-produto{
+  font-weight: bold !important;
+    font-size: 24px !important;
+}
+.preco-interno-produto{
+  font-weight: bold;
+    font-size: 21px;
+    margin-top: -12px;
+    color: #04BAE5;
+}
+
+.conteudo-produto{
+
+}
+
+.conteudo-produto p,
+.conteudo-produto * div{
+   font-size: 14px !important;
+   line-height: 24px !important;
+   color: #747474 !important;
+}
+
+
+.conteudo-produto img{
+  width: 100% !important;
+  height: auto !important;
+}
+
+.conteudo-produto iframe{
+  width: 100%;
+  height: 290px;
+}
+
+
+
+
+
+
+
+
+
 
 

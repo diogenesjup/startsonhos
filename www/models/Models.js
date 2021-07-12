@@ -4,7 +4,44 @@ class Models{
     // TESTAR A DISPONIBILIDADE DA API
     testeApi(){
                 
-      console.log("TESTE API DESATIVADO");   
+               // INICIO CHAMADA AJAX
+              var request = $.ajax({
+
+                  method: "POST",
+                  url: app.urlApi+"teste-api/",
+                  data:{token:app.token}
+              
+              })
+              request.done(function (dados) {    
+
+                  $("#btnLoginEmailSenha").html("Login");        
+
+                  var dadosWordPress = dados;
+                  console.log("%c RETORNO TESTE API","background:#ff0000;color:#fff;");
+                  console.log(dadosWordPress);
+
+                  if(dados.sucesso=="200"){
+                      
+                      localStorage.setItem("dadosWordPress",JSON.stringify(dadosWordPress));
+                     
+
+                  }else{
+                     
+                     aviso("Oops! Algo deu errado","Não conseguimos comunicação com o servidor, tente novamente em alguns minutos.");
+
+                  }
+
+                  
+              });
+              request.fail(function (dados) {
+
+                   console.log("API NÃO DISPONÍVEL (testeApi)");
+                   console.log(dados);
+                   aviso("Oops! Algo deu errado","Não conseguimos nos comunicar com a internet. Verifique sua conexão e tente novamente.");
+
+              });
+              // FINAL CHAMADA AJAX
+        
 
     }
     
@@ -14,76 +51,12 @@ class Models{
        $("#btnViewLogin").html("Carregando...");
        
        event.preventDefault();
-      
+
        var nomeUsuario = $("#nome").val();
        var emailUsuario = $("#email").val();
-            
-            /*
-            // INICIO CHAMADA AJAX
-              var request = $.ajax({
-
-                  method: "POST",
-                  url: app.urlApiProxy+"login.php",
-                  data:{token:app.token,tokenSms:app.tokenSms,omniToken:omniToken,loginUsuario:loginUsuario,loginSenha:loginSenha}
-              
-              })
-              request.done(function (dados) {    
-
-                  $("#btnLoginEmailSenha").html("Login");        
-
-                  console.log("%c RETORNO DO LOGIN","background:#ff0000;color:#fff;");
-                  console.log(dados);
-
-                  var dadosUsuario = JSON.stringify(dados);
-                  
-                  if(dados.sucesso=="200"){
-                     
-                     if(dados.dados==null){
-
-                        aviso("Oops! Algo deu errado","Login ou senha não encontrados. Verifique as informações inseridas e tente novamente.");
-
-                     }else{
-                        
-                        localStorage.setItem("token-truck",dados.dados.token);
-                        localStorage.setItem("logado-ativo",dados.dados.usuario.ativo);
-                        localStorage.setItem("logado-cpf_cnpj",dados.dados.usuario.cpf_cnpj);
-                        localStorage.setItem("logado-dt_cadastro",dados.dados.usuario.dt_cadastro);
-                        localStorage.setItem("logado-dt_update",dados.dados.usuario.dt_update);
-                        localStorage.setItem("logado-id_cliente_crm",dados.dados.usuario.id_cliente_crm);
-                        localStorage.setItem("logado-id_usuario",dados.dados.usuario.id_usuario);
-                        localStorage.setItem("logado-nome",dados.dados.usuario.nome);
-                        localStorage.setItem("logado-senha",dados.dados.usuario.senha);
-                        localStorage.setItem("logado-tp_cliente",dados.dados.usuario.tp_cliente);
-                        localStorage.setItem("logado-usuario",dados.dados.usuario.usuario);
-
-                        app.login();
-
-                     }
-                     
-                     $("#btnViewLogin").html("Login");
-
-                  }else{
-                     
-                     $(".form-control").val("");
-                     aviso("Oops! Login ou senha não encontrados","Verifique os dados inseridos e tente novamente!");
-                     $("#btnViewLogin").html("Login");
-
-                  }
-                  
-              });
-              request.fail(function (dados) {
-
-                   console.log("API NÃO DISPONÍVEL (procLogin)");
-                   console.log(dados);
-                   aviso("Oops! Algo deu errado","Nossos servidores estão passando por dificuldades técnicas, tente novamente em alguns minutos");
-                   $("#btnViewLogin").html("Login");
-
-              });
-              // FINAL CHAMADA AJAX
-            */
-           
-           // CONFIRMAR O LOGIN
-           app.login(nomeUsuario,emailUsuario);
+      
+       // CONFIRMAR O LOGIN
+      app.login(nomeUsuario,emailUsuario);
 
     }
 

@@ -14,16 +14,16 @@ class App {
 
         if(ambiente=="HOMOLOGACAO"){
              
-            this.urlDom = "http://127.0.0.1:8080/alessandroduarte/app/www/";
-            this.urlApi = "http://127.0.0.1:8080/alessandroduarte/api";
-            this.urlCdn = "http://127.0.0.1:8080/alessandroduarte/cdn";
+            this.urlDom = "http://127.0.0.1:8080/startsonhos/app/www/";
+            this.urlApi = "http://127.0.0.1:8080/startsonhos/api";
+            this.urlCdn = "http://127.0.0.1:8080/startsonhos/cdn";
 
         }
         if(ambiente=="PRODUCAO"){
 
-            this.urlDom = "";
-            this.urlApi = "";
-            this.urlCdn = "";
+            this.urlDom = "https://startsonhos.com/";
+            this.urlApi = "https://startsonhos.com/apistartsonhos/";
+            this.urlCdn = "https://startsonhos.com/wp-content/uploads/";
 
         }
 
@@ -110,6 +110,7 @@ class App {
        
         localStorage.clear();
         app.viewLogin();
+        location.reload();
 
     }
 
@@ -333,6 +334,33 @@ relatorios(){
     this.views.relatorios();
 
 }
+
+
+        // FILTRAR PRODUTOS DA BUSCA PRINCIPAL
+        resultadoDePesquisa(){
+                 
+                 var input, filter, ul, li, a, i;
+
+                 var entrei = "nao";
+                          
+                          input = document.getElementById('buscaPrincipal');
+                          filter = input.value.toUpperCase();
+                          ul = $(".area-pesquisa-principal");
+
+                          li = $(".area-pesquisa-principal .caixa-branca");
+
+                           for (i = 0; i < li.length; i++) {
+                              a = li[i];
+                              if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                  li[i].style.display = "";
+                                  entrei = "sim";
+                              } else {
+                                  li[i].style.display = "none";
+                              }
+                          }
+                          
+        }
+
 
 
 

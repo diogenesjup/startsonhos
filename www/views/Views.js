@@ -74,7 +74,14 @@ class Views {
                      <div class="col-12 wow fadeInUp">
                         <!-- BUSCA PRINCIPAL -->
                         <div class="input-group busca-principal">
-                           <input type="text" class="form-control" placeholder="Faça uma pesquisa" aria-label="Pesquise por produtos" aria-describedby="busca-principal">
+                           <input 
+                              type="text" 
+                              class="form-control" 
+                              onkeyup="app.resultadoDePesquisa();" 
+                              placeholder="Faça uma pesquisa" 
+                              aria-label="Pesquise por produtos"
+                              aria-describedby="busca-principal"
+                              id="buscaPrincipal">
                                  <div class="input-group-append">
                                  <span class="input-group-text" id="busca-principal">
                                     <img src="assets/images/pesquisa.svg" alt="Busca">
@@ -87,7 +94,7 @@ class Views {
                   </div>
 
                   <!-- STORIES -->
-                        <div class="stories">
+                        <div class="stories" style="display:none;">
                            <div class="row">
                               <div class="col-12">
                                  
@@ -250,208 +257,18 @@ class Views {
                      <div class="pcss3t pcss3t-height-auto">
 
                      <input type="radio" name="pcss3t" checked  id="tab1" class="tab-content-first">
-                     <label for="tab1">Sorteios abertos</label>
+                     <label for="tab1">Sorteios</label>
                                                                            
                      <input type="radio" name="pcss3t" id="tab2" class="tab-content-2">
-                     <label for="tab2">Encerrados</label>
+                     <label for="tab2">Outros</label>
 
                      
 
                         <ul>
                                                                                     
                            <!-- ABA UM -->
-                           <li class="tab-content tab-content-first" id="conteudo1">
+                           <li class="tab-content tab-content-first area-pesquisa-principal" id="conteudo1">
                               
-
-                                 
-
-
-                                 <div class="caixa-branca">
-                       
-
-                                    <p class="thumb">
-                                        <a href="#" title="Clique para ver mais sobre essa postagem">
-                                            <img src="assets/images/capa-sorteio.png" alt="Capa do Sorteio">
-                                        </a>
-                                    </p>
-
-                                    <h5>Nome do sorteio, produto ou conteúdo</h5>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-                                    <div class="actions-bar">
-                                        <div>
-                                            <button data-js="like" class="">
-                                                <i class="fas fa-heart"></i>
-                                                <span>221</span>
-                                            </button>
-                                            <button data-js="comment">
-                                                <i class="fas fa-comment"></i>
-                                                <span>12</span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button data-js="share">
-                                                <i class="fas fa-share"></i>
-                                                <span>Comp.</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="caixa-branca">
-                       
-
-                                    <p class="thumb">
-                                        <a href="#" title="Clique para ver mais sobre essa postagem">
-                                            <img src="assets/images/capa-sorteio.png" alt="Capa do Sorteio">
-                                        </a>
-                                    </p>
-
-                                    <h5>Nome do sorteio, produto ou conteúdo</h5>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-                                    <div class="actions-bar">
-                                        <div>
-                                            <button data-js="like" class="">
-                                                <i class="fas fa-heart"></i>
-                                                <span>221</span>
-                                            </button>
-                                            <button data-js="comment">
-                                                <i class="fas fa-comment"></i>
-                                                <span>12</span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button data-js="share">
-                                                <i class="fas fa-share"></i>
-                                                <span>Comp.</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="caixa-branca">
-                       
-
-                                    <p class="thumb">
-                                        <a href="#" title="Clique para ver mais sobre essa postagem">
-                                            <img src="assets/images/capa-sorteio.png" alt="Capa do Sorteio">
-                                        </a>
-                                    </p>
-
-                                    <h5>Nome do sorteio, produto ou conteúdo</h5>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-                                    <div class="actions-bar">
-                                        <div>
-                                            <button data-js="like" class="">
-                                                <i class="fas fa-heart"></i>
-                                                <span>221</span>
-                                            </button>
-                                            <button data-js="comment">
-                                                <i class="fas fa-comment"></i>
-                                                <span>12</span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button data-js="share">
-                                                <i class="fas fa-share"></i>
-                                                <span>Comp.</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="caixa-branca">
-                       
-
-                                    <p class="thumb">
-                                        <a href="#" title="Clique para ver mais sobre essa postagem">
-                                            <img src="assets/images/capa-sorteio.png" alt="Capa do Sorteio">
-                                        </a>
-                                    </p>
-
-                                    <h5>Nome do sorteio, produto ou conteúdo</h5>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-                                    <div class="actions-bar">
-                                        <div>
-                                            <button data-js="like" class="">
-                                                <i class="fas fa-heart"></i>
-                                                <span>221</span>
-                                            </button>
-                                            <button data-js="comment">
-                                                <i class="fas fa-comment"></i>
-                                                <span>12</span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button data-js="share">
-                                                <i class="fas fa-share"></i>
-                                                <span>Comp.</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="caixa-branca">
-                       
-
-                                    <p class="thumb">
-                                        <a href="#" title="Clique para ver mais sobre essa postagem">
-                                            <img src="assets/images/capa-sorteio.png" alt="Capa do Sorteio">
-                                        </a>
-                                    </p>
-
-                                    <h5>Nome do sorteio, produto ou conteúdo</h5>
-
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-                                    <div class="actions-bar">
-                                        <div>
-                                            <button data-js="like" class="">
-                                                <i class="fas fa-heart"></i>
-                                                <span>221</span>
-                                            </button>
-                                            <button data-js="comment">
-                                                <i class="fas fa-comment"></i>
-                                                <span>12</span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button data-js="share">
-                                                <i class="fas fa-share"></i>
-                                                <span>Comp.</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                           </li>
-                           <!-- ABA UM -->
-
-                           <!-- ABA DOIS -->
-                           <li class="tab-content tab-content-2" id="conteudo2">
                                  <div class="carregando-frame">
                                     <p>
                                     <img src="assets/images/loading.gif" alt="Carregando" /><br clear="both">
@@ -462,6 +279,26 @@ class Views {
                                  <p>&nbsp;</p>
                                  <p>&nbsp;</p>
                                  <p>&nbsp;</p>
+                                  
+
+                           </li>
+                           <!-- ABA UM -->
+
+                           <!-- ABA DOIS -->
+                           <li class="tab-content tab-content-2 area-pesquisa-principal" id="conteudo2">
+
+                                 <div class="carregando-frame">
+                                    <p>
+                                    <img src="assets/images/loading.gif" alt="Carregando" /><br clear="both">
+                                    Carregando conteúdo
+                                    </p>
+                                 </div>
+
+                                 <p>&nbsp;</p>
+                                 <p>&nbsp;</p>
+                                 <p>&nbsp;</p>
+
+
                            </li>
                            <!-- ABA DOIS -->
 
@@ -499,122 +336,173 @@ class Views {
 
       $("footer").fadeIn();
 
-      /*
-      if(localStorage.getItem("calibragem")==null){
 
-            app.views.calibragem();
+      if(localStorage.getItem("dadosWordPress")!==null){
+          
+          app.views.carregarProdutos();
+      
+      }else{
+          
+          app.models.testeApi();
 
       }
-      */
-   }
 
-   cssInicioLogado() {
 
-      restaurarBackground();
 
-      
-      $("header").css("background", "#fff");
-      $("header").css("color", "#000");
-      $("header").css("box-shadow", "0px 2px 4px rgba(0, 0, 0, 0.06)");
-      
 
 
    }
 
-   calibragem() {
+
+   carregarProdutos(){
+       
+       var produtos = JSON.parse(localStorage.getItem("dadosWordPress"));
+
+       console.log("DADOS RECUPERADOS:");
+       console.log(produtos);
+
+       // SORTEIOS
+       for(var i = 0;i<produtos.produtos.length;i++){
+
+          if(i==0){ $("#conteudo1").html(``); }
+
+          if(produtos.produtos[i].rifa!="" && produtos.produtos[i].rifa!=0 && produtos.produtos[i].rifa!="0" && produtos.produtos[i].rifa!=null){
+
+                    $("#conteudo1").append(`
+
+                                           <!-- SORTEIO --> 
+                                           <div class="caixa-branca">
+                                 
+                                              <p class="thumb">
+                                                  <a href="javascript:void(0)" onclick="app.views.detalheProduto(${produtos.produtos[i].id})" title="Ver detalhes do sorteio">
+                                                      <img src="${produtos.produtos[i].imagem}" alt="${produtos.produtos[i].titulo}">
+                                                  </a>
+                                              </p>
+
+                                              <h5>${produtos.produtos[i].titulo}</h5>
+
+                                              <p>${produtos.produtos[i].resumo}</p>
+
+                                              <div class="actions-bar">
+                                                  <div>
+                                                      <button data-js="like" class="">
+                                                          <i class="fas fa-heart"></i>
+                                                          <span>0</span>
+                                                      </button>
+                                                      <button data-js="comment">
+                                                          <i class="fas fa-comment"></i>
+                                                          <span>0</span>
+                                                      </button>
+                                                  </div>
+                                                  <div>
+                                                      <button data-js="share">
+                                                          <i class="fas fa-share"></i>
+                                                          <span>Comp.</span>
+                                                      </button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!-- SORTEIO -->
+
+                    `);
+
+           }// IF SE É SORTEIO
+
+       }// SORTEIO
+
+
+       // OUTROS PRODUTOS
+       for(var i = 0;i<produtos.produtos.length;i++){
+
+          if(i==0){ $("#conteudo2").html(``); }
+
+          if(produtos.produtos[i].rifa=="" || produtos.produtos[i].rifa==0 || produtos.produtos[i].rifa=="0" || produtos.produtos[i].rifa==null){
+
+                    $("#conteudo2").append(`
+
+                                           <!-- PRODUTO DE OUTRO TIPO --> 
+                                           <div class="caixa-branca">
+                                 
+                                              <p class="thumb">
+                                                  <a href="javascript:void(0)" onclick="app.views.detalheProduto(${produtos.produtos[i].id})" title="Ver detalhes do produto">
+                                                      <img src="${produtos.produtos[i].imagem}" alt="${produtos.produtos[i].titulo}">
+                                                  </a>
+                                              </p>
+
+                                              <h5>${produtos.produtos[i].titulo}</h5>
+
+                                              <p>${produtos.produtos[i].resumo}</p>
+
+                                              <div class="actions-bar">
+                                                  <div>
+                                                      <button data-js="like" class="">
+                                                          <i class="fas fa-heart"></i>
+                                                          <span>0</span>
+                                                      </button>
+                                                      <button data-js="comment">
+                                                          <i class="fas fa-comment"></i>
+                                                          <span>0</span>
+                                                      </button>
+                                                  </div>
+                                                  <div>
+                                                      <button data-js="share">
+                                                          <i class="fas fa-share"></i>
+                                                          <span>Comp.</span>
+                                                      </button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!-- PRODUTO DE OUTRO TIPO --> 
+
+                    `);
+
+           }// IF SE É OUTRO PRODUTO
+
+       }// OUTROS PRODUTOS
+
+
+   }
+
+
+   detalheProduto(idProduto){
 
       voltarAoTopo();
-      app.views.desativarTodosMenus();
+      
+      var produtos = JSON.parse(localStorage.getItem("dadosWordPress"));
+      var dadoProduto;
 
-      this.header.html(`
+      console.log("DADOS RECUPERADOS:");
+      console.log(produtos);
 
-               <div class="container">
-                     <div class="row">
-                     <div class="col-3 no-paddings coluna-um">
-                           <a href="javascript:void(0)" onclick="app.logoff();">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
-                           </a>
-                     </div>
-                     <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Bem vindo!
-                     </div>
-                     <div class="col-3 no-paddings coluna-tres">
-                           <img src="assets/images/ferpall.png" alt="Ferpall Logo" />
-                     </div>
-                     </div>
-               </div>
+      console.log("PRODUTO:");
+      console.log(idProduto);
 
-            `);
+      for(var i = 0;i<produtos.produtos.length;i++){
 
-      this._content.html(`
-               
-                  <div class="row view-principal" view-name="view-principal">
-                     <div class="col-12 wow fadeInUp">
-                        
-                        <h2 class="status-tarefa">
-                           Configuração inicial do aplicativo
-                           
-                        </h2>
-                        
+         if(produtos.produtos[i].id==idProduto){
 
-                        
+            dadoProduto = produtos.produtos[i];
+            i = produtos.produtos.length + 1;
 
-                              <!-- TAREFA -->                
-                              <div class="caixa-branca caixa-branca-tarefa">
+         }
 
+      }
 
-                                    <div class="form-group">
-                                       <label>Para um uso correto do aplicativo, precisamos fazer algumas configurações. Ao clicar em "Iníciar", vamos solicitar as permissões necessárias do seu dispositivo para o uso do <b>GPS</b> e da sua <b>câmera</b>. Esses recursos são essencias para o funcionamento do aplicativo.</label>
-                                    </div>
+      console.log("DADO PRODUTO:");
+      console.log(dadoProduto);
 
-                                    <div class="acessibilidade">
-                                    <a href="javascript:void(0)" onclick="app.increaseFont();" title="Aumentar a fonte">
-                                       <img src="assets/images/increase-font.svg" alt="Aumentar a fonte" />
-                                    </a>
-                                    </div>
-
-
-                              </div>
-                              <!-- TAREFA -->
-
-
-                                 <div class="form-group">
-                                 <button class="btn btn-primary" onclick="app.iniciarCalibragem();">
-                                       Iniciar
-                                 </button>
-                                 </div>
-
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-
-
-                     </div>
-                  </div>
-               
-               `);
-
-      this.animarTransicao();
-
-   }
-
-   tarefas() {
-
-      voltarAoTopo();
-      app.views.ativarMenuDois();
-
+      // IMPRIMIR HTML
       this.header.html(`
 
                <div class="container">
                      <div class="row">
                      <div class="col-3 no-paddings coluna-um">
                            <a href="javascript:void(0)" onclick="app.inicio();">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
+                              <img src="assets/images/voltar.svg" alt="Voltar" style="width: 27px;margin-top: 0px;" />
                            </a>
                      </div>
                      <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Agenda
+                           Detalhe produto
                      </div>
                      <div class="col-3 no-paddings coluna-tres">
                            <div class="foto-perfil-header" style="background:url('assets/images/profile.svg') #f2f2f2 no-repeat;background-size:cover;background-position:center center;">
@@ -633,11 +521,23 @@ class Views {
                   <div class="row view-principal" view-name="view-principal">
                      <div class="col-12 wow slideInLeft" data-wow-delay="0.0s" data-wow-duration="0.3s">
                         
-                        <h1 class="titulo-pagina">
-                           Agenda
+                        <p>
+                           <img src="${dadoProduto.imagem}" style="width:100%;height:auto" /> 
+                        </p>
+
+                        <h1 class="titulo-pagina titulo-interno-produto">
+                           ${dadoProduto.titulo}
                         </h1>
+                        <h2 class="preco-interno-produto">R$ ${dadoProduto.preco}</h2>
+                        <div class="actionProdutoInterno"></div>
+
+                        <hr>
+                          <div class="conteudo-produto">
+                            ${dadoProduto.conteudo}
+                          </div>
+                        <hr>
                         
-                        
+                        <div class="actionProdutoInterno"></div>
 
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
@@ -652,516 +552,92 @@ class Views {
 
       this.animarTransicao();
 
-   }
+      var kit = dadoProduto.preco;
+      var qtd = 1;
 
-   relatorios() {
+      localStorage.setItem("kit",dadoProduto.preco);
+      localStorage.setItem("qtd",1);
 
-      voltarAoTopo();
-      app.views.desativarTodosMenus();
-      app.views.ativarMenuTres();
+      // PRODUTO É RIFA
+      if(dadoProduto.rifa!="" && 
+        dadoProduto.rifa!=0 && 
+        dadoProduto.rifa!="0" && 
+        dadoProduto.rifa!=null){
 
-      this.header.html(`
+        $(".actionProdutoInterno").html(`
 
-               <div class="container">
-                     <div class="row">
-                     <div class="col-3 no-paddings coluna-um">
-                           <a href="javascript:void(0)" onclick="app.inicio();">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
-                           </a>
-                     </div>
-                     <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Favoritos
-                     </div>
-                     <div class="col-3 no-paddings coluna-tres">
-                           <div class="foto-perfil-header" style="background:url('assets/images/profile.svg') #f2f2f2 no-repeat;background-size:cover;background-position:center center;">
-                           <a href="javascript:void(0)" onclick="app.fabrirFecharMenuLoja()" title="Meu Perfil">
-                              &nbsp;
-                           </a>
-                           </div>
-                     </div>
-                     </div>
-               </div>
+            <div class="form-group">
+              <label>Quantidade</label>
+              <select class="form-control" onchange="app.views.mudarKits(this)">
+                      
+                      ${dadoProduto.combos_kits.map((n) => {
 
-            `);
+                              return `
+                                  
+                                 <option value="${n.quantidade}">(X${n.quantidade}) ${n.titulo_opcao} ${n.valor_mkt}</option>
 
-      this._content.html(`
-               
-                  <div class="row view-principal" view-name="view-principal">
-                     <div class="col-12 wow slideInLeft" data-wow-delay="0.0s" data-wow-duration="0.3s">
-                        
-                        <h1 class="titulo-pagina">
-                           Favoritos
-                        </h1>
-                        
-                                             
+                              `
+                      
+                       }).join('')}
 
+              </select>
+            </div>
 
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
+            <p class="o-botao-final">
+              <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${localStorage.getItem("qtd")}&idproduto=${dadoProduto.id}')" title="Comprar" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
+                 Comprar
+              </a>
+            </p>
 
+        `);
 
-                     </div>
-                  </div>
-               
-               `);
+      // PRODUTO NÃO É RIFA  
+      }else{
 
-      this.animarTransicao();
+        $(".actionProdutoInterno").html(`
 
+            <p class="o-botao-final">
+              <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}?add-to-cart=${dadoProduto.id}')" title="Comprar" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
+                 Comprar
+              </a>
+            </p>
 
+        `);
+
+      }
+
+      localStorage.setItem("idProduto",dadoProduto.id);
 
    }
 
-   initTarefa() {
 
-      voltarAoTopo();
-      app.views.desativarTodosMenus();
+   // MUDAR KITS
+   mudarKits(seletor){
 
-      this.header.html(`
+        var valor = $(seletor).val();
 
-               <div class="container">
-                     <div class="row">
-                     <div class="col-3 no-paddings coluna-um">
-                           <a href="javascript:void(0)" onclick="app.inicio();">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
-                           </a>
-                     </div>
-                     <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Responder tarefa
-                     </div>
-                     <div class="col-3 no-paddings coluna-tres">
-                           <img src="assets/images/ferpall.png" alt="Ferpall Logo" />
-                     </div>
-                     </div>
-               </div>
+        $(".o-botao-final").html(`
 
-            `);
-
-      this._content.html(`
-               
-                  <div class="row view-principal" view-name="view-principal">
-                     <div class="col-12 wow fadeInUp">
-                        
-                        <h2 class="status-tarefa">
-                           Entrada do produto (1/34)
-                           <span>
-                              071
-                              <small>
-                                 CONTROLE
-                              </small>
-                           </span>
-                        </h2>
-                        
-
-                        <form method="post" action="javascript:void(0)" onsubmit="app.views.tarefaCheckBox();">
-
-                              <!-- TAREFA -->                
-                              <div class="caixa-branca caixa-branca-tarefa">
-
-
-                                    <div class="form-group">
-                                       <label>Nome do avaliador</label>
-                                       <input type="text" class="form-control" required placeholder="Digite nesse campo" />
-                                    </div>
-
-                                    <div class="acessibilidade">
-                                    <a href="javascript:void(0)" onclick="app.increaseFont();" title="Aumentar a fonte">
-                                       <img src="assets/images/increase-font.svg" alt="Aumentar a fonte" />
-                                    </a>
-                                    </div>
-
-
-                              </div>
-                              <!-- TAREFA -->
-
-
-                                 <div class="form-group">
-                                 <button class="btn btn-primary">
-                                       Próxima pergunta 
-                                 </button>
-                                 </div>
-
-
-                        </form>
-
-                        <div class="form-group">
-                           <a href="javascript:void(0)" class="btn btn-default" onclick="app.salvarEContinuarDepois();" title="Salvar e continuar depois">
-                              Salvar e continuar depois
-                           </a>
-                        </div>
-
-
-                        
-
-
-
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-
-
-                     </div>
-                  </div>
-               
-               `);
-
-      this.animarTransicao();
+           <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${valor}&idproduto=${localStorage.getItem("idProduto")}')" title="Comprar" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
+              Comprar
+           </a>
+           
+        `);
 
    }
 
-   tarefaCheckBox() {
+   cssInicioLogado() {
 
-      voltarAoTopo();
-      app.views.desativarTodosMenus();
+      restaurarBackground();
 
-      this.header.html(`
-
-               <div class="container">
-                     <div class="row">
-                     <div class="col-3 no-paddings coluna-um">
-                           <a href="javascript:void(0)" onclick="app.views.initTarefa()">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
-                           </a>
-                     </div>
-                     <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Responder tarefa
-                     </div>
-                     <div class="col-3 no-paddings coluna-tres">
-                           <img src="assets/images/ferpall.png" alt="Ferpall Logo" />
-                     </div>
-                     </div>
-               </div>
-
-            `);
-
-      this._content.html(`
-               
-                  <div class="row view-principal" view-name="view-principal">
-                     <div class="col-12 wow fadeInUp">
-                        
-                        <h2 class="status-tarefa">
-                           Entrada do produto (2/34)
-                           <span>
-                              071
-                              <small>
-                                 CONTROLE
-                              </small>
-                           </span>
-                        </h2>
-                        
-
-                        <form method="post" action="javascript:void(0)" onsubmit="app.views.tarefaImagem();">
-
-                              <!-- TAREFA -->                
-                              <div class="caixa-branca caixa-branca-tarefa">
-
-                                    <div class="form-group">
-                                       <label>A inspeção é de reavaliação</label>
-                                    </div>
-
-                                    <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                       <label class="form-check-label" for="exampleRadios1">
-                                       Sim
-                                       </label>
-                                    </div>
-                                    <div class="form-check">
-                                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                       <label class="form-check-label" for="exampleRadios2">
-                                       Não
-                                       </label>
-                                    </div>
-
-                                    <div class="acessibilidade">
-                                    <a href="javascript:void(0)" onclick="app.increaseFont();" title="Aumentar a fonte">
-                                       <img src="assets/images/increase-font.svg" alt="Aumentar a fonte" />
-                                    </a>
-                                    </div>
-
-                              </div>
-                              <!-- TAREFA -->
-
-
-                                 <div class="form-group">
-                                 <button class="btn btn-primary">
-                                       Próxima pergunta 
-                                 </button>
-                                 </div>
-
-
-                        </form>
-
-                        <div class="form-group">
-                           <a href="javascript:void(0)" class="btn btn-default" onclick="app.salvarEContinuarDepois();" title="Salvar e continuar depois">
-                              Salvar e continuar depois
-                           </a>
-                        </div>
-
-
-
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-
-
-                     </div>
-                  </div>
-               
-               `);
-
-      this.animarTransicao();
+      
+      $("header").css("background", "#fff");
+      $("header").css("color", "#000");
+      $("header").css("box-shadow", "0px 2px 4px rgba(0, 0, 0, 0.06)");
 
    }
 
-   tarefaImagem() {
-
-      voltarAoTopo();
-      app.views.desativarTodosMenus();
-
-      this.header.html(`
-
-               <div class="container">
-                     <div class="row">
-                     <div class="col-3 no-paddings coluna-um">
-                           <a href="javascript:void(0)" onclick="app.views.tarefaCheckBox();">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
-                           </a>
-                     </div>
-                     <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Responder tarefa
-                     </div>
-                     <div class="col-3 no-paddings coluna-tres">
-                           <img src="assets/images/ferpall.png" alt="Ferpall Logo" />
-                     </div>
-                     </div>
-               </div>
-
-            `);
-
-      this._content.html(`
-               
-                  <div class="row view-principal" view-name="view-principal">
-                     <div class="col-12 wow fadeInUp">
-                        
-                        <h2 class="status-tarefa">
-                           Entrada do produto (3/34)
-                           <span>
-                              071
-                              <small>
-                                 CONTROLE
-                              </small>
-                           </span>
-                        </h2>
-                        
-
-                        <form method="post" action="javascript:void(0)" onsubmit="app.views.tarefaComUpload();">
-
-                              <!-- TAREFA -->                
-                              <div class="caixa-branca caixa-branca-tarefa">
-
-                                    <div class="form-group form-group-imagem">
-                                       <img src="assets/images/imagem.png" alt="Título da pergunta" />
-                                    </div> 
-                                    <div class="form-group">
-                                       <label>Título da pergunta</label>
-                                       <input type="text" class="form-control" required placeholder="Digite nesse campo" />
-                                    </div>
-
-                                    <div class="acessibilidade">
-                                    <a href="javascript:void(0)" onclick="app.increaseFont();" title="Aumentar a fonte">
-                                       <img src="assets/images/increase-font.svg" alt="Aumentar a fonte" />
-                                    </a>
-                                    </div>
-
-
-                              </div>
-                              <!-- TAREFA -->
-
-
-                                 <div class="form-group">
-                                 <button class="btn btn-primary">
-                                       Próxima pergunta 
-                                 </button>
-                                 </div>
-
-
-                        </form>
-
-                        <div class="form-group">
-                           <a href="javascript:void(0)" class="btn btn-default" onclick="app.salvarEContinuarDepois();" title="Salvar e continuar depois">
-                              Salvar e continuar depois
-                           </a>
-                        </div>
-
-
-                        
-
-
-
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-
-
-                     </div>
-                  </div>
-               
-               `);
-
-      this.animarTransicao();
-
-   }
-
-   tarefaComUpload() {
-
-      voltarAoTopo();
-      app.views.desativarTodosMenus();
-
-      this.header.html(`
-
-               <div class="container">
-                     <div class="row">
-                     <div class="col-3 no-paddings coluna-um">
-                           <a href="javascript:void(0)" onclick="app.views.tarefaImagem();">
-                              <img src="assets/images/voltar.svg" alt="Voltar" />
-                           </a>
-                     </div>
-                     <div class="col-6 text-center no-paddings" id="tituloHeader">
-                           Responder tarefa
-                     </div>
-                     <div class="col-3 no-paddings coluna-tres">
-                           <img src="assets/images/ferpall.png" alt="Ferpall Logo" />
-                     </div>
-                     </div>
-               </div>
-
-            `);
-
-      this._content.html(`
-               
-                  <div class="row view-principal" view-name="view-principal">
-                     <div class="col-12 wow fadeInUp">
-                        
-                        <h2 class="status-tarefa">
-                           Entrada do produto (4/34)
-                           <span>
-                              071
-                              <small>
-                                 CONTROLE
-                              </small>
-                           </span>
-                        </h2>
-
-
-                        <!-- CAIXA UPLOAD -->              
-                        <div class="caixa-branca caixa-branca-tarefa">
-
-                                 <div class="form-group">
-                                 <label>Título da pergunta, sobre porque o usuário precisa carregar ou fotografar uma imagem</label>
-                                 </div>
-                                 
-                                 <!-- ESCOLHER TIPO IMAGEM -->
-                                 <div class="escolha-tipo-camera">
-                                                <div class="row">
-                                                      <div class="col-6 area-select-camera">
-                                                               <a href="javascript:void(0)" title="Selecionar pela camêra" onclick="appCamera.startCameraBelow();">
-                                                                  <img src="assets/images/camera.svg" alt="Camera" />
-                                                                           Câmera
-                                                               </a>
-                                                      </div>
-                                                      <div class="col-6 area-select-camera">
-                                                                           
-                                                               <form class="fileForm" style="padding-top:0px;" method="post" enctype="multipart/form-data" action="${app.urlApi}upload-imagens.php">
-                                                                           
-                                                                  <input type="hidden" name="token" value="${app.token}" />
-                                                                  <div class="form-group selecionar-arquivo">
-                                                                     <label id="selecionarArquivoSelfie" for="selecionarArquivoInputSelfie">
-                                                                     <img src="assets/images/biblioteca.svg" alt="Biblioteca" />
-                                                                           Biblioteca
-                                                                     </label>
-                                                                           
-                                                                     <input type="file" style="opacity: 0;height: 1px;width: 1px;" name="arquivos[]" multiple id="selecionarArquivoInputSelfie" accept="image/x-png,image/gif,image/jpeg" onchange="uploadLocal()">
-                                                                              
-                                                                  </div>
-
-                                                               </form>
-
-                                                      </div>
-                                                </div>
-                                                                  
-                                             <div class="retorno-upload"></div>
-                                 </div>
-                                 <!-- ESCOLHER TIPO IMAGEM -->
-
-                                 <!-- IMAGENS DA OFERTA -->
-                                 <div class="card preview-imagens-da-oferta">
-                                    <p class="preview-thumb">A imagem anexada a essa pergunta será exibida aqui</p>
-                                 </div>
-                                 <!-- IMAGENS DA OFERTA -->
-
-
-                        </div>
-                        <!-- CAIXA UPLOAD -->
-                        
-
-                        <form method="post" action="javascript:void(0)" onsubmit="app.views.concluirTarefa();">
-
-                              <!-- TAREFA -->                
-                              <div class="caixa-branca caixa-branca-tarefa">
-
-                                    <div class="form-group">
-                                       <label>Legenda da imagem</label>
-                                       <input type="text" class="form-control" required placeholder="Digite nesse campo" />
-                                    </div>
-
-                                    <div class="acessibilidade">
-                                    <a href="javascript:void(0)" onclick="app.increaseFont();" title="Aumentar a fonte">
-                                       <img src="assets/images/increase-font.svg" alt="Aumentar a fonte" />
-                                    </a>
-                                    </div>
-
-                              </div>
-                              <!-- TAREFA -->
-
-                                 <div class="form-group">
-                                 <button class="btn btn-primary">
-                                       Finalizar
-                                 </button>
-                                 </div>
-
-                        </form>
-
-                        <div class="form-group">
-                           <a href="javascript:void(0)" class="btn btn-default" onclick="app.salvarEContinuarDepois();" title="Salvar e continuar depois">
-                              Salvar e continuar depois
-                           </a>
-                        </div>
-
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-
-                     </div>
-                  </div>
-               
-               `);
-
-      this.animarTransicao();
-
-   }
-
-   concluirTarefa() {
-
-      app.inicio();
-      aviso("Tarefa concluída!", "Suas respostas foram enviadas! Obrigado.");
-
-
-   }
+   
 
    view2() {
 
