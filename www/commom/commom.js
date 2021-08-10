@@ -561,11 +561,15 @@ function initStories(){
             // see src/zuck.js for more details
             viewerItemBody (index, currentIndex, item) {
 
+                //console.log("ITEM");
+                //console.log(item);
+
+
                 return  `
 
                     <div class="caixa-nova-imagem-storie" style="background:url('${item.src}') transparent no-repeat;background-size:cover;background-position:center center;">
 
-                        <a href="javascript:void(0)" onclick="openUrl('${item.urlPostagem}')" title="ver postagem">
+                        <a href="javascript:void(0)" onclick="openUrl('${item.urlpostagem}')" title="ver postagem">
                           Ver postagem
                         </a>
 
@@ -632,8 +636,8 @@ function initStories(){
       });
 
 
-  //console.log("ESSAS SÃO AS POSTAGENS:");
-  //console.log(postagens);
+  console.log("ESSAS SÃO AS POSTAGENS:");
+  console.log(postagens);
 
   // ADICIONAR AS POSTAGENS AO OBJETO
   for(var i = 0;i<postagens.length;i++){
