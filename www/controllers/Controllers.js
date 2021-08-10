@@ -232,6 +232,13 @@ class App {
         }
 
     }
+
+    like(idProduto,total){
+       
+       console.log("Vamos dar Like no produto...");
+       this.models.like(idProduto,total);
+
+    }
     
 
     iniciarCalibragem(){

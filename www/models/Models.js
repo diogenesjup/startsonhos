@@ -54,9 +54,39 @@ class Models{
 
        var nomeUsuario = $("#nome").val();
        var emailUsuario = $("#email").val();
+       var userFCMToken = localStorage.getItem("userFCMToken");
+
+        // ENVIAR PARA O WORDPRESS
+        // INICIO CHAMADA AJAX
+              var request = $.ajax({
+
+                  method: "POST",
+                  url: app.urlApi+"salvar-ou-logar-usuario/",
+                  data:{token:app.token,emailUsuario:emailUsuario,nomeUsuario:nomeUsuario,userFCMToken:userFCMToken}
+              
+              })
+              request.done(function (dados) {    
+
+                  if(dados.sucesso=="200"){
+                      
+                      console.log("USUÁRIO AUTENTICADO");
+                      console.log(dados);
+
+                  }
+
+              });
+              request.fail(function (dados) {
+
+                   console.log("API NÃO DISPONÍVEL (procLogin)");
+                   console.log(dados);
+                   aviso("Oops! Algo deu errado","Não conseguimos nos comunicar com a internet. Verifique sua conexão e tente novamente.");
+
+              });
+              // FINAL CHAMADA AJAX
+
       
        // CONFIRMAR O LOGIN
-      app.login(nomeUsuario,emailUsuario);
+       app.login(nomeUsuario,emailUsuario);
 
     }
 
@@ -283,6 +313,42 @@ class Models{
                 app.login();
   
   
+      }
+
+
+      like(idProduto,total){
+
+              // INICIO CHAMADA AJAX
+              var request = $.ajax({
+
+                  method: "POST",
+                  url: app.urlApi+"like/",
+                  data:{token:app.token,idProduto:idProduto,total:total}
+              
+              })
+              request.done(function (dados) {         
+
+                  if(dados.sucesso=="200"){
+                     
+                     console.log("LIKE ENVIADO COM SUCESSO");
+                     console.log(dados);
+                  
+                  }else{
+
+                      console.log("FALHA NO LIKE");
+                      console.log(dados);
+                  }
+                  
+              });
+              request.fail(function (dados) {
+
+                   console.log("API NÃO DISPONÍVEL (like)");
+                   console.log(dados);
+                   aviso("Oops! Algo deu errado","Nossos servidores estão passando por dificuldades técnicas, tente novamente em alguns minutos");
+
+              });
+              // FINAL CHAMADA AJAX
+
       }
 
 

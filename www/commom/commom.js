@@ -110,6 +110,32 @@ function openUrl(url){
   }
 
 }
+// COMPARTILHAR EXTERNO
+            function compartilharExterno(url,titulo){
+
+                  // this is the complete list of currently supported params you can pass to the plugin (all optional)
+                  var options = {
+                    message: 'Start Sonhos', // not supported on some apps (Facebook, Instagram)
+                    subject: 'Nós, da Start Sonhos, acreditamos que você deve ter o direito de realizar seus mais profundos sonhos', // fi. for email
+                    //files: ['', ''], // an array of filenames either locally or remotely
+                    url: url,
+                    chooserTitle: titulo, // Android only, you can override the default share sheet title
+                    //appPackageName: 'com.apple.social.facebook', // Android only, you can provide id of the App you want to share with
+                    //iPadCoordinates: '0,0,0,0' //IOS only iPadCoordinates for where the popover should be point.  Format with x,y,width,height
+                  };
+
+                  var onSuccess = function(result) {
+                    console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+                    console.log("Shared to app: " + result.app); // On Android result.app since plugin version 5.4.0 this is no longer empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+                  };
+
+                  var onError = function(msg) {
+                    console.log("Sharing failed with message: " + msg);
+                  };
+
+                  window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+
+            }
 
 // FOR"CAR VOLTAR AO TOPO
 function voltarAoTopo() {
@@ -475,4 +501,169 @@ function secToStr (num) {
   }
         
   return tempo;
+}
+
+/* STORIES */
+var timestamp = function() {
+           var timeIndex = 0;
+           var shifts = [35, 60, 60 * 3, 60 * 60 * 2, 60 * 60 * 25, 60 * 60 * 24 * 4, 60 * 60 * 24 * 10];
+
+           var now = new Date();
+           var shift = shifts[timeIndex++] || 0;
+           var date = new Date(now - shift * 1000);
+
+           return date.getTime() / 1000;
+};
+
+
+var stories;
+
+function initStories(){
+  
+  console.log("INIT STORIES...");
+
+  var dadosWordPress = JSON.parse(localStorage.getItem("dadosWordPress"));
+  var postagens = dadosWordPress.postagens;
+
+
+
+      var currentSkin = 'Snapgram';
+      stories = new Zuck('storiesZ', {
+        backNative: true,
+        previousTap: true,
+        skin: 'snapgram',
+        autoFullScreen: true,
+        avatars: false,
+        paginationArrows: false,
+        list: false,
+        cubeEffect: true,
+        time:false,
+        localStorage: true,
+        language: { // if you need to translate :)
+          unmute: 'Toque para ligar o som',
+          keyboardTip: 'Espaço para ver o próximo',
+          visitLink: 'Visitar link',
+          time: {
+            ago:'atrás', 
+            hour:'hora', 
+            hours:'horas', 
+            minute:'minuto', 
+            minutes:'minutos', 
+            fromnow: 'agora', 
+            seconds:'segundo', 
+            yesterday: 'ontem', 
+            tomorrow: 'amanhã', 
+            days:'dias'
+          }
+        },
+        template: {
+            // use these functions to render custom templates
+            // see src/zuck.js for more details
+            viewerItemBody (index, currentIndex, item) {
+
+                return  `
+
+                    <div class="caixa-nova-imagem-storie" style="background:url('${item.src}') transparent no-repeat;background-size:cover;background-position:center center;">
+
+                        <a href="javascript:void(0)" onclick="openUrl('${item.urlPostagem}')" title="ver postagem">
+                          Ver postagem
+                        </a>
+
+                    </div>
+
+                `;
+
+            }
+          },
+        storiesDisabled: [
+          Zuck.buildTimelineItem(
+            "ramon", 
+            "assets/images/icone.png",
+            "Ramon",
+            "https://www.diogenesjunior.com.br",
+            timestamp(),
+            [
+              ["ramon-3", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/3.png", "assets/images/icone.png", 'https://www.diogenesjunior.com.br', 'Acessar', false, timestamp()]
+            ]
+          ),
+          Zuck.buildTimelineItem(
+            "gorillaz",
+            "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/2.jpg",
+            "Gorillaz",
+            "",
+            timestamp(),
+            [
+              ["gorillaz-1", "video", 0, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/4.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/4.jpg", '', false, false, timestamp()],
+              ["gorillaz-2", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/5.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/5.jpg", '', false, false, timestamp()],
+            ]
+          ),
+          Zuck.buildTimelineItem(
+            "ladygaga",
+            "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/3.jpg",
+            "Lady Gaga",
+            "",
+            timestamp(),
+            [
+              ["ladygaga-1", "photo", 5, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg", '', false, false, timestamp()],
+              ["ladygaga-2", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/7.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/7.jpg", 'http://ladygaga.com', false, false, timestamp()],
+            ]
+          ),
+          Zuck.buildTimelineItem(
+            "starboy",
+            "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/4.jpg",
+            "The Weeknd",
+            "",
+            timestamp(),
+            [
+              ["starboy-1", "photo", 5, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg", '', false, false, timestamp()]
+            ]
+          ),
+          Zuck.buildTimelineItem(
+            "riversquomo",
+            "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/5.jpg",
+            "Rivers Cuomo",
+            "",
+            timestamp(),
+            [
+              ["riverscuomo", "photo", 10, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", '', false, false, timestamp()]
+            ]
+          )
+        ]
+      });
+
+
+  //console.log("ESSAS SÃO AS POSTAGENS:");
+  //console.log(postagens);
+
+  // ADICIONAR AS POSTAGENS AO OBJETO
+  for(var i = 0;i<postagens.length;i++){
+
+      var newStorie = {
+        id: postagens[i].id,               // story id
+        photo: postagens[i].imagem,            // story photo (or user photo)
+        name: postagens[i].titulo,             // story name (or user name)
+        link: postagens[i].url,    // story link (useless on story generated by script)
+        lastUpdated: "",      // last updated date in unix time format
+        seen: false,          // set true if user has opened
+        items: [              // array of items
+          // story item example
+          {
+            id: postagens[i].id,       // item id
+            type: "photo",     // photo or video
+            length: 5,    // photo timeout or video length in seconds - uses 3 seconds timeout for images if not set
+            src: postagens[i].imagem,      // photo or video src
+            preview: postagens[i].imagem,  // optional - item thumbnail to show in the story carousel instead of the story defined image
+            link: postagens[i].url,     // a link to click on story
+            linkText: "Acessar a postagem", // link text
+            time: "",     // optional a date to display with the story item. unix timestamp are converted to "time ago" format
+            seen: false,   // set true if current user was read,
+            urlPostagem: postagens[i].url, //  custom-value
+          }
+        ],
+      }
+
+      stories.update(newStorie);
+
+  }
+
 }

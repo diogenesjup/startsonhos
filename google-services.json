@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382084781812",
+    "project_id": "start-sonhos",
+    "storage_bucket": "start-sonhos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382084781812:android:71b623959124b0ab0bf0a1",
+        "android_client_info": {
+          "package_name": "com.whatsignals.start"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382084781812-7imn596vfaajoi4phev810p3munjhssl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4nfsn-wYQsZhqDFmoZH0dzYn6s47FChg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382084781812-7imn596vfaajoi4phev810p3munjhssl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

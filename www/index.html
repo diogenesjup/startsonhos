@@ -87,6 +87,10 @@ ysyss
   <!-- CONFIRM -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">  
 
+  <!-- ZUCK -->
+  <link rel="stylesheet" href="dist/zuck.min.css">
+  <link rel="stylesheet" href="dist/skins/snapgram.css">
+
 </head>
 
 <body>
@@ -200,20 +204,20 @@ ysyss
       <span id="nomeUsuarioMN"></span>
       <small id="emailUsuarioMN"></small>
     </h3>
-    <nav >
+    <nav>
       <ul>
 
-        <li><a href="javascript:void(0)" title="Editar Perfil">
+       <!-- <li><a href="javascript:void(0)" title="Editar Perfil">
             Editar Perfil</a>
-        </li>
+        </li>-->
 
-        <li><a href="javascript:void(0)" title="Meus Pedidos">
+        <!--<li><a href="javascript:void(0)" title="Meus Pedidos">
             Meus Pedidos</a>
-        </li>
+        </li>-->
 
-        <li><a href="javascript:void(0)" title="Suporte">
+       <!-- <li><a href="javascript:void(0)" title="Suporte">
             Suporte</a>
-        </li>
+        </li>-->
 
         <li><a href="javascript:void(0)"
             onclick="app.fabrirFecharMenuLoja(); confirmacao('Tem certeza que deseja sair?','Você será deslogado','app.logoff()','Sair')"
@@ -261,6 +265,31 @@ ysyss
   <!-- JQUERY CONFIRM -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
+  <script type="text/javascript">
+    
+          // REGISTRAR E SALVAR O FCM TOKEN
+          document.addEventListener("deviceready", onDeviceReady, false);
+
+          function onDeviceReady() {
+
+              /*
+              aviso("TESTES UNITÁRIOS",'Device Name: '     + device.name     + '<br />' + 
+                                'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                                'Device Platform: ' + device.platform + '<br />' + 
+                                'Device UUID: '     + device.uuid     + '<br />' + 
+                                'Device Version: '  + device.version  + '<br />');
+
+              */
+  
+              FCM.getToken().then(token => {
+                localStorage.setItem("userFCMToken",token);
+              });
+
+          }
+
+  </script>  
+
+  <script src="dist/zuck.min.js"></script>
 
   <script type="text/javascript" src="commom/commom.js"></script> <!-- STANCIAS DE PLUGINS EXTERNOS -->
   <script src="controllers/Controllers.js"></script> <!-- CONTROLLEERS GUARDAM AS FUNCOES GERAIS -->

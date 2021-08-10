@@ -94,14 +94,15 @@ class Views {
                   </div>
 
                   <!-- STORIES -->
-                        <div class="stories" style="display:none;">
+                        <div class="stories">
                            <div class="row">
                               <div class="col-12">
                                  
-                                    
+                                    <div id="storiesZ" class="storiesWrapper"></div>
+
+                                    <!--
                                     <ul class="stories">
                                        
-                                       <!-- STORIES -->
                                        <li>
                                           <a href="javascript:void(0)">
                                              <div class="stories__story">
@@ -110,140 +111,13 @@ class Views {
                                              </picture>
                                              </div>
                                              <span class="story__title">
-                                             Iphone 12
+                                             Iphone 12 com um título grande para testar a quebra
                                              </span>
                                           </a>
                                        </li>
-                                       <!-- STORIES -->
 
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories2.svg" alt="TV LCD">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             TV LCD
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories3.svg" alt="PS5">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             PS5
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories4.svg" alt="Ganhadores">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             Ganhadores
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories1.svg" alt="XBOX">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             XBOX
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories2.svg" alt="Games">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             Games
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories3.svg" alt="Livros">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             Livros
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories4.svg" alt="LOVE">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             LOVE
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-
-                                       <!-- STORIES -->
-                                       <li>
-                                          <a href="javascript:void(0)">
-                                             <div class="stories__story">
-                                             <picture>
-                                                <img src="assets/images/stories1.svg" alt="R$100">
-                                             </picture>
-                                             </div>
-                                             <span class="story__title">
-                                             R$100
-                                             </span>
-                                          </a>
-                                       </li>
-                                       <!-- STORIES -->
-
-
-
-                                       
-
-                                       </ul>
+                                    </ul>
+                                    -->
 
 
                               </div>
@@ -350,7 +224,6 @@ class Views {
 
 
 
-
    }
 
 
@@ -360,6 +233,9 @@ class Views {
 
        console.log("DADOS RECUPERADOS:");
        console.log(produtos);
+
+       // INICIAR O STORIES
+       setTimeout(function(){ initStories(); }, 2000);
 
        // SORTEIOS
        for(var i = 0;i<produtos.produtos.length;i++){
@@ -385,17 +261,17 @@ class Views {
 
                                               <div class="actions-bar">
                                                   <div>
-                                                      <button data-js="like" class="">
+                                                      <button data-js="like" class="" onclick="app.like(${produtos.produtos[i].id},${produtos.produtos[i].likes})">
                                                           <i class="fas fa-heart"></i>
-                                                          <span>0</span>
+                                                          <span>${produtos.produtos[i].likes}</span>
                                                       </button>
-                                                      <button data-js="comment">
+                                                      <!--<button data-js="comment">
                                                           <i class="fas fa-comment"></i>
                                                           <span>0</span>
-                                                      </button>
+                                                      </button>-->
                                                   </div>
                                                   <div>
-                                                      <button data-js="share">
+                                                      <button data-js="share" onclick="compartilharExterno('${produtos.produtos[i].titulo}','${produtos.produtos[i].url}')">
                                                           <i class="fas fa-share"></i>
                                                           <span>Comp.</span>
                                                       </button>
@@ -410,6 +286,8 @@ class Views {
 
        }// SORTEIO
 
+       var imagemProduto = "";
+       var subs = "https";
 
        // OUTROS PRODUTOS
        for(var i = 0;i<produtos.produtos.length;i++){
@@ -418,6 +296,16 @@ class Views {
 
           if(produtos.produtos[i].rifa=="" || produtos.produtos[i].rifa==0 || produtos.produtos[i].rifa=="0" || produtos.produtos[i].rifa==null){
 
+                    if(produtos.produtos[i].imagem.includes(subs)){
+
+                     imagemProduto = produtos.produtos[i].imagem.replace("https://startsonhos.com/ssweb/wp-content/uploads/","");
+
+                    }else{
+                      
+                      imagemProduto = produtos.produtos[i].imagem;
+
+                    }
+
                     $("#conteudo2").append(`
 
                                            <!-- PRODUTO DE OUTRO TIPO --> 
@@ -425,7 +313,7 @@ class Views {
                                  
                                               <p class="thumb">
                                                   <a href="javascript:void(0)" onclick="app.views.detalheProduto(${produtos.produtos[i].id})" title="Ver detalhes do produto">
-                                                      <img src="${produtos.produtos[i].imagem}" alt="${produtos.produtos[i].titulo}">
+                                                      <img src="${imagemProduto}" alt="${produtos.produtos[i].titulo}">
                                                   </a>
                                               </p>
 
@@ -435,17 +323,17 @@ class Views {
 
                                               <div class="actions-bar">
                                                   <div>
-                                                      <button data-js="like" class="">
+                                                      <button data-js="like" class="" onclick="app.like(${produtos.produtos[i].id},${produtos.produtos[i].likes})">
                                                           <i class="fas fa-heart"></i>
-                                                          <span>0</span>
+                                                          <span>${produtos.produtos[i].likes}</span>
                                                       </button>
-                                                      <button data-js="comment">
+                                                      <!--<button data-js="comment">
                                                           <i class="fas fa-comment"></i>
                                                           <span>0</span>
-                                                      </button>
+                                                      </button>-->
                                                   </div>
                                                   <div>
-                                                      <button data-js="share">
+                                                      <button data-js="share" onclick="compartilharExterno('${produtos.produtos[i].titulo}','${produtos.produtos[i].url}')">
                                                           <i class="fas fa-share"></i>
                                                           <span>Comp.</span>
                                                       </button>
@@ -459,6 +347,10 @@ class Views {
            }// IF SE É OUTRO PRODUTO
 
        }// OUTROS PRODUTOS
+
+
+       // INICIAR O STORIES
+       //setTimeout(function(){ initStories(); }, 2000);
 
 
    }
@@ -710,7 +602,7 @@ class Views {
                      <div class="col-12 wow fadeInRight" data-wow-delay="0.0s" data-wow-duration="0.3s">
                         
                         <div class="caixa-branca logo-caixa-branca">
-                           <img class="ld ld-heartbeat" src="assets/images/logo-h.png" alt="Start Sonhos logo" />
+                           <img class="" src="assets/images/logo-h.png" alt="Start Sonhos logo" />
                         </div>
                         
                         <div class="caixa-branca caixa-branca-login">
