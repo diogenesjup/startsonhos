@@ -52,7 +52,7 @@
     <preference name="FadeSplashScreenDuration" value="1200"/>
 
     <preference name="android-minSdkVersion" value="23" />
-    <preference name="android-targetSdkVersion" value="29" />
+    <preference name="android-targetSdkVersion" value="30" />
 
     <!-- FIREBASE -->
     <!--<plugin name="cordova-plugin-firebase" source="npm" spec="^3.0.0" />-->
