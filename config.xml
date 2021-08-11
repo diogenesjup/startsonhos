@@ -52,13 +52,25 @@
     <preference name="FadeSplashScreenDuration" value="1200"/>
 
     <preference name="android-minSdkVersion" value="23" />
-    <preference name="android-targetSdkVersion" value="29" />
+    <preference name="android-targetSdkVersion" value="30" />
 
     <!-- FIREBASE -->
     <!--<plugin name="cordova-plugin-firebase" source="npm" spec="^3.0.0" />-->
     <!--<plugin name="cordova-plugin-fcm-with-dependency-updated-apns" />-->
-    <!--<plugin name="cordova-plugin-fcm-with-dependecy-updated" />-->
+    <plugin name="cordova-plugin-fcm-with-dependecy-updated" />
     
+   
+    <!-- CORRIGINDO PROBLEMAS ANDROID X -->
+    <plugin name="cordova-plugin-androidx" />
+    <plugin name="cordova-plugin-androidx-adapter" />
+    <!-- Core plugins  -->
+       
+    <!--<plugin name="cordova-plugin-camera" spec="~2.4.1"  />--> <!--spec="~2.4.1"  -->
+    <!-- <plugin name="cordova-plugin-file"   />   -->
+    <!--<plugin name="cordova-plugin-file-transfer" spec="~1.6.1" /> --> <!-- spec="~1.6.1"  -->
+    <!--<plugin name="cordova-plugin-media-capture" />-->
+    <plugin name="cordova-plugin-android-permissions" />
+    <!--<preference name="android-build-tool" value="gradle" />-->
     
     <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-splashscreen" />
@@ -75,6 +87,9 @@
     <preference name="ScrollEnabled" value="true" />
 
     <plugin name="cordova-plugin-x-socialsharing" />
+    <feature name="SocialSharing">
+      <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
 
     <!--
     <feature name="Camera">
