@@ -57,7 +57,7 @@
     <!-- FIREBASE -->
     <!--<plugin name="cordova-plugin-firebase" source="npm" spec="^3.0.0" />-->
     <!--<plugin name="cordova-plugin-fcm-with-dependency-updated-apns" />-->
-    <plugin name="cordova-plugin-fcm-with-dependecy-updated" />
+    <!--<plugin name="cordova-plugin-fcm-with-dependecy-updated" />-->
     
     
     <plugin name="cordova-plugin-inappbrowser" />
