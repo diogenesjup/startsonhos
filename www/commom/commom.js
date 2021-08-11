@@ -88,7 +88,7 @@ function openUrl(url){
    
     // ABRINDO A URL
     //cordova.InAppBrowser.open(url, '_system', 'location=yes');
-    cordova.InAppBrowser.open(url, '_blank', 'location=yes,hidden=no,hardwareback=no');
+    cordova.InAppBrowser.open(url, '_blank', 'location=yes,toolbarcolor=#00dff2,hidden=no,hardwareback=no');
 
     /*
 
@@ -115,8 +115,8 @@ function openUrl(url){
 
                   // this is the complete list of currently supported params you can pass to the plugin (all optional)
                   var options = {
-                    message: 'Start Sonhos', // not supported on some apps (Facebook, Instagram)
-                    subject: 'Nós, da Start Sonhos, acreditamos que você deve ter o direito de realizar seus mais profundos sonhos', // fi. for email
+                    message: titulo+" - "+url, // not supported on some apps (Facebook, Instagram)
+                    subject: url, // fi. for email
                     //files: ['', ''], // an array of filenames either locally or remotely
                     url: url,
                     chooserTitle: titulo, // Android only, you can override the default share sheet title
