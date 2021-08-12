@@ -88,7 +88,7 @@ function openUrl(url){
    
     // ABRINDO A URL
     //cordova.InAppBrowser.open(url, '_system', 'location=yes');
-    cordova.InAppBrowser.open(url, '_blank', 'location=yes,toolbarcolor=#00dff2,hidden=no,hardwareback=no,toolbarposition=yes');
+    cordova.InAppBrowser.open(url, '_blank', 'location=yes,toolbarcolor=#00dff2,hidden=no,hardwareback=no,toolbarposition=top');
 
     /*
 
