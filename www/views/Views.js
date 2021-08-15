@@ -474,10 +474,13 @@ class Views {
 
               </select>
             </div>
-
+            
+            <p>
+              <b>Atenção:</b> esse sorteio não tem qualquer relação com a Apple.
+            </p>
             <p class="o-botao-final">
-              <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${localStorage.getItem("qtd")}&idproduto=${dadoProduto.id}')" title="Comprar" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
-                 Comprar
+              <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${localStorage.getItem("qtd")}&idproduto=${dadoProduto.id}')" title="Eu quero!" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
+                 Eu quero!
               </a>
             </p>
 
@@ -488,9 +491,12 @@ class Views {
 
         $(".actionProdutoInterno").html(`
 
+            <p>
+              <b>Atenção:</b> esse item não tem qualquer relação com a Apple.
+            </p>
             <p class="o-botao-final">
-              <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}?add-to-cart=${dadoProduto.id}')" title="Comprar" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
-                 Comprar
+              <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}?add-to-cart=${dadoProduto.id}')" title="Eu quero!" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
+              Eu quero!
               </a>
             </p>
 
@@ -510,8 +516,8 @@ class Views {
 
         $(".o-botao-final").html(`
 
-           <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${valor}&idproduto=${localStorage.getItem("idProduto")}')" title="Comprar" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
-              Comprar
+           <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${valor}&idproduto=${localStorage.getItem("idProduto")}')" title="Eu quero!" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
+              Eu quero!
            </a>
            
         `);
