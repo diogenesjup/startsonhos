@@ -482,7 +482,7 @@ class Views {
               <a href="javascript:void(0)" onclick="openUrl('${app.urlDom}processar-lead/?nome=${localStorage.getItem("nomeUsuario")}&email=${localStorage.getItem("idUsuario")}&kit=${localStorage.getItem("kit")}&qtd=${localStorage.getItem("qtd")}&idproduto=${dadoProduto.id}')" title="Eu quero!" class="btn btn-primary" style="padding-top: 9px;height: 45px;margin-top: 10px;">
                  Eu quero!
               </a>
-            </p>
+            </p> 
 
         `);
 
